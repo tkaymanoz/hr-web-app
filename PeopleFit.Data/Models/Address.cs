@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace PeopleFit.Data.Models
 {
     public class Address
@@ -8,5 +10,7 @@ namespace PeopleFit.Data.Models
         public int City { get; set; }
         public string CountryID { get; set; }
         public Country Country{ get; set; }
+
+        public ICollection<PersonAddress> PersonAddresses { get; set; }
     }
 }

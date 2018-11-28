@@ -16,6 +16,7 @@ namespace PeopleFit.Services.Implementations
         public Repository(DbContext context)
         {
             _context=context;
+            dbSet = _context.Set<TEntity>();
         }
 
         public void Add(TEntity entity)
@@ -56,12 +57,23 @@ namespace PeopleFit.Services.Implementations
 
         public void Remove(TEntity entity)
         {
-            throw new NotImplementedException();
+            if (_context.Entry(entity).State == EntityState.Detached)
+            {
+                dbSet.Attach(entity);
+            }
+            dbSet.Remove(entity);
+        }
+
+        public void Remove(object id)
+        {
+            TEntity entityToRemove = dbSet.Find(id);
+            Remove(entityToRemove);
         }
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
     }
 }

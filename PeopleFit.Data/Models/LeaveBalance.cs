@@ -5,7 +5,7 @@ namespace PeopleFit.Data.Models
 {
     public enum LeaveType
     {
-        Annual,Sick,Study,Maternity,Special
+        Annual,Sick,Study,Maternity,Special,PreRetirement
     }
 
     public class LeaveBalance
