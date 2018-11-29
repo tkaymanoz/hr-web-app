@@ -21,7 +21,7 @@ namespace PeopleFit.Services.Implementations
 
         public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            dbSet.Add(entity);
         }
 
         public IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "")
