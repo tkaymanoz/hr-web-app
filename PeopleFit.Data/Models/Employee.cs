@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PeopleFit.Data.Models
 {
@@ -23,5 +24,9 @@ namespace PeopleFit.Data.Models
         public ICollection<LeaveDay> LeaveDays {get; set;}
         public ICollection<CourseBooking> CourseBookings { get; set; }
         public ICollection<LeaveAccrual> LeaveAccruals {get; set;}
+        [InverseProperty("Leader")]
+        public ICollection<Manager> Leaders{get; set;}
+        [ForeignKey("Subordinate")]
+        public ICollection<Manager> Subordinates{get; set;}
     }
 }
