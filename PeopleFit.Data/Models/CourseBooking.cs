@@ -10,7 +10,7 @@ namespace PeopleFit.Data.Models
     public class CourseBooking
     {
         public int ID { get; set; }
-        public int? CourseSessionID { get; set; }
+        public int CourseSessionID { get; set; }
         public int EmployeeID { get; set; }     
         public BookingState BookingState { get; set; }
         public bool Attended { get; set; }

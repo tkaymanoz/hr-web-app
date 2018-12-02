@@ -15,6 +15,10 @@ namespace PeopleFit.Data.Models
         public Contract Contract { get; set; }
         public DateTime StartDate{get; set;}
         public DateTime? EndDate{get; set;}
+
+        public int DepartmentID { get; set; }
+
+        public Department Department { get; set; }
         public int PersonID {get; set;}
 
         public Person Person{get; set;}

@@ -21,8 +21,6 @@ namespace PeopleFit.Data.Models
         public StaffCategory StaffCategory { get; set; }
         public string Description { get; set; }
         public string Requirements { get; set; }
-        public string BusinessUnit { get; set; }
-        public int Supervisor { get; set; }
         public DateTime TimeStamp { get; set; }
         
         public ICollection<Appointment> Appointments {get; set;}

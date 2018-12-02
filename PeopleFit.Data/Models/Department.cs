@@ -6,8 +6,8 @@ namespace PeopleFit.Data.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        
-
+        public int BusinessUnitID { get; set; }
+        public BusinessUnit BusinessUnit { get; set; }
         public ICollection<Position> Positions { get; set; }
     }
 }
